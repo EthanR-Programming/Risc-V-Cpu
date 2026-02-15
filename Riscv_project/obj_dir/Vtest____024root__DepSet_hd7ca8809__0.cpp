@@ -42,11 +42,54 @@ void Vtest____024root___eval_triggers__act(Vtest____024root* vlSelf) {
     Vtest___Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtest____024root___eval_triggers__act\n"); );
     // Body
-    vlSelf->__VactTriggered.set(0U, ((IData)(vlSelf->test___DOT__clk) 
+    vlSelf->__VactTriggered.set(0U, (0U != (((((((vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U] 
+                                                  ^ 
+                                                  vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[0U]) 
+                                                 | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[1U] 
+                                                    ^ 
+                                                    vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[1U])) 
+                                                | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[2U] 
+                                                   ^ 
+                                                   vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[2U])) 
+                                               | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[3U] 
+                                                  ^ 
+                                                  vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[3U])) 
+                                              | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[4U] 
+                                                 ^ 
+                                                 vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[4U])) 
+                                             | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
+                                                ^ vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[5U])) 
+                                            | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
+                                               ^ vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[6U]))));
+    vlSelf->__VactTriggered.set(1U, (1U & ((IData)(vlSelf->test___DOT____Vcellinp__wrapper____pinNumber1) 
+                                           & (~ (IData)(vlSelf->__Vtrigprevexpr___TOP__test___DOT____Vcellinp__wrapper____pinNumber1__0)))));
+    vlSelf->__VactTriggered.set(2U, ((IData)(vlSelf->test___DOT__clk) 
                                      & (~ (IData)(vlSelf->__Vtrigprevexpr___TOP__test___DOT__clk__0))));
-    vlSelf->__VactTriggered.set(1U, vlSelf->__VdlySched.awaitingCurrentTime());
+    vlSelf->__VactTriggered.set(3U, ((~ (IData)(vlSelf->test___DOT__clk)) 
+                                     & (IData)(vlSelf->__Vtrigprevexpr___TOP__test___DOT__clk__0)));
+    vlSelf->__VactTriggered.set(4U, vlSelf->__VdlySched.awaitingCurrentTime());
+    vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[0U] 
+        = vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U];
+    vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[1U] 
+        = vlSelf->test___DOT__wrapper__DOT__decoded_instr[1U];
+    vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[2U] 
+        = vlSelf->test___DOT__wrapper__DOT__decoded_instr[2U];
+    vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[3U] 
+        = vlSelf->test___DOT__wrapper__DOT__decoded_instr[3U];
+    vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[4U] 
+        = vlSelf->test___DOT__wrapper__DOT__decoded_instr[4U];
+    vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[5U] 
+        = vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U];
+    vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1[6U] 
+        = vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U];
+    vlSelf->__Vtrigprevexpr___TOP__test___DOT____Vcellinp__wrapper____pinNumber1__0 
+        = vlSelf->test___DOT____Vcellinp__wrapper____pinNumber1;
     vlSelf->__Vtrigprevexpr___TOP__test___DOT__clk__0 
         = vlSelf->test___DOT__clk;
+    if (VL_UNLIKELY((1U & (~ (IData)(vlSelf->__VactDidInit))))) {
+        vlSelf->__VactDidInit = 1U;
+        vlSelf->__VactTriggered.set(0U, 1U);
+    }
 #ifdef VL_DEBUG
     if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {
         Vtest____024root___dump_triggers__act(vlSelf);

@@ -89,6 +89,9 @@ VL_ATTR_COLD void Vtest____024root___dump_triggers__stl(Vtest____024root* vlSelf
     if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
         VL_DBG_MSGF("         'stl' region trigger index 0 is active: Internal 'stl' trigger - first iteration\n");
     }
+    if ((2ULL & vlSelf->__VstlTriggered.word(0U))) {
+        VL_DBG_MSGF("         'stl' region trigger index 1 is active: @([hybrid] test_.wrapper.decoded_instr)\n");
+    }
 }
 #endif  // VL_DEBUG
 
@@ -97,186 +100,15 @@ VL_ATTR_COLD void Vtest____024root___stl_sequent__TOP__0(Vtest____024root* vlSel
     Vtest___Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtest____024root___stl_sequent__TOP__0\n"); );
     // Body
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-        = ((0x7fffffU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U]) 
-           | (0xff800000U & ((vlSelf->test___DOT__wrapper__DOT__instruction 
-                              << 0x1fU) | ((0x7c000000U 
-                                            & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                               << 0x13U)) 
-                                           | (0x3800000U 
-                                              & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                                 << 0xbU))))));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
-        = (0x3fU & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                    >> 1U));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-        = ((0xff80003fU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U]) 
-           | (0xffffffc0U & ((0x7c0000U & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                           << 3U)) 
-                             | ((0x3e000U & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                             >> 7U)) 
-                                | (0x1fc0U & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                              >> 0x13U))))));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U] 
-        = ((0xffffffdfU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U]) 
-           | ((0x33U == (0x7fU & ((vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
-                                   << 1U) | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                             >> 0x1fU)))) 
-              << 5U));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U] 
-        = ((0xffffffefU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U]) 
-           | (((0x13U == (0x7fU & ((vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
-                                    << 1U) | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                              >> 0x1fU)))) 
-               | (3U == (0x7fU & ((vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
-                                   << 1U) | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                             >> 0x1fU))))) 
-              << 4U));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U] 
-        = ((0xfffffff7U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U]) 
-           | ((0x23U == (0x7fU & ((vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
-                                   << 1U) | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                             >> 0x1fU)))) 
-              << 3U));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U] 
-        = ((0xfffffffbU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U]) 
-           | ((0x63U == (0x7fU & ((vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
-                                   << 1U) | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                             >> 0x1fU)))) 
-              << 2U));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U] 
-        = ((0xfffffffdU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U]) 
-           | (((0x37U == (0x7fU & ((vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
-                                    << 1U) | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                              >> 0x1fU)))) 
-               | (0x17U == (0x7fU & ((vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
-                                      << 1U) | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                                >> 0x1fU))))) 
-              << 1U));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U] 
-        = ((0xfffffffeU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U]) 
-           | (0x6fU == (0x7fU & ((vlSelf->test___DOT__wrapper__DOT__decoded_instr[6U] 
-                                  << 1U) | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                            >> 0x1fU)))));
-    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__trap_instr 
-        = (1U & (~ (IData)((0U != (0x3fU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U])))));
-    if (VL_UNLIKELY(vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__trap_instr)) {
-        VL_WRITEF("Illegal opcode\n\n");
-    }
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[4U] 
-        = ((0x3fU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[4U]) 
-           | (0xffffffc0U & (((- (IData)((vlSelf->test___DOT__wrapper__DOT__instruction 
-                                          >> 0x1fU))) 
-                              << 0x12U) | (0x3ffc0U 
-                                           & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                              >> 0xeU)))));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-        = ((0xffffffc0U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U]) 
-           | (0x3fU & ((- (IData)((vlSelf->test___DOT__wrapper__DOT__instruction 
-                                   >> 0x1fU))) >> 0xeU)));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[3U] 
-        = ((0x3fU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[3U]) 
-           | (0xffffffc0U & (((- (IData)((vlSelf->test___DOT__wrapper__DOT__instruction 
-                                          >> 0x1fU))) 
-                              << 0x12U) | ((0x3f800U 
-                                            & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                               >> 0xeU)) 
-                                           | (0x7c0U 
-                                              & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                                 >> 1U))))));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[4U] 
-        = ((0xffffffc0U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[4U]) 
-           | (0x3fU & ((- (IData)((vlSelf->test___DOT__wrapper__DOT__instruction 
-                                   >> 0x1fU))) >> 0xeU)));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[2U] 
-        = ((0x3fU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[2U]) 
-           | (0xffffffc0U & (((- (IData)((vlSelf->test___DOT__wrapper__DOT__instruction 
-                                          >> 0x1fU))) 
-                              << 0x13U) | ((0x40000U 
-                                            & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                               >> 0xdU)) 
-                                           | ((0x20000U 
-                                               & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                                  << 0xaU)) 
-                                              | ((0x1f800U 
-                                                  & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                                     >> 0xeU)) 
-                                                 | (0x780U 
-                                                    & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                                       >> 1U))))))));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[3U] 
-        = ((0xffffffc0U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[3U]) 
-           | (0x3fU & ((- (IData)((vlSelf->test___DOT__wrapper__DOT__instruction 
-                                   >> 0x1fU))) >> 0xdU)));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[1U] 
-        = ((0x3fU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[1U]) 
-           | (0xfffc0000U & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                             << 6U)));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[2U] 
-        = ((0xffffffc0U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[2U]) 
-           | (vlSelf->test___DOT__wrapper__DOT__instruction 
-              >> 0x1aU));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U] 
-        = ((0x3fU & vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U]) 
-           | (0xffffffc0U & (((- (IData)((vlSelf->test___DOT__wrapper__DOT__instruction 
-                                          >> 0x1fU))) 
-                              << 0x1bU) | ((0x4000000U 
-                                            & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                               >> 5U)) 
-                                           | ((0x3fc0000U 
-                                               & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                                  << 6U)) 
-                                              | ((0x20000U 
-                                                  & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                                     >> 3U)) 
-                                                 | (0x1ff80U 
-                                                    & (vlSelf->test___DOT__wrapper__DOT__instruction 
-                                                       >> 0xeU))))))));
-    vlSelf->test___DOT__wrapper__DOT__decoded_instr[1U] 
-        = ((0xffffffc0U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[1U]) 
-           | (0x3fU & ((- (IData)((vlSelf->test___DOT__wrapper__DOT__instruction 
-                                   >> 0x1fU))) >> 5U)));
-    vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x 
-        = vlSelf->test___DOT__wrapper__DOT__reg_file__DOT__block
-        [(0x1fU & (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                   >> 0x12U))];
-    vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x 
-        = ((0x20U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[0U])
-            ? vlSelf->test___DOT__wrapper__DOT__reg_file__DOT__block
-           [(0x1fU & (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                      >> 0xdU))] : ((vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                     << 0x1aU) | (vlSelf->test___DOT__wrapper__DOT__decoded_instr[4U] 
-                                                  >> 6U)));
-    vlSelf->test___DOT__wrapper__DOT__alu_output = 
-        ((0x2000000U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U])
-          ? ((0x1000000U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U])
-              ? ((0x800000U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U])
-                  ? (vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x 
-                     & vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x)
-                  : (vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x 
-                     | vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x))
-              : ((0x800000U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U])
-                  ? ((0x20U == (0x7fU & (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                         >> 6U))) ? 
-                     VL_SHIFTR_III(32,32,32, vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x, vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x)
-                      : VL_SHIFTR_III(32,32,32, vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x, vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x))
-                  : (vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x 
-                     ^ vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x)))
-          : ((0x1000000U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U])
-              ? ((0x800000U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U])
-                  ? (((QData)((IData)(vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x)) 
-                      < (QData)((IData)(vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x)))
-                      ? 1U : 0U) : ((vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x 
-                                     < vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x)
-                                     ? 1U : 0U)) : 
-             ((0x800000U & vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U])
-               ? VL_SHIFTL_III(32,32,32, vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x, vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x)
-               : ((0x20U == (0x7fU & (vlSelf->test___DOT__wrapper__DOT__decoded_instr[5U] 
-                                      >> 6U))) ? (vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x 
-                                                  - vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x)
-                   : (vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x 
-                      + vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x)))));
+    vlSelf->test___DOT____Vcellinp__wrapper____pinNumber1 
+        = vlSelf->test___DOT__clk;
+    vlSelf->test___DOT__wrapper__DOT__instruction = 
+        vlSelf->test___DOT__wrapper__DOT__ram_controller__DOT__bram_block
+        [(0x3ffU & (vlSelf->test___DOT__wrapper__DOT__program_counter 
+                    >> 2U))];
 }
+
+void Vtest____024root___act_sequent__TOP__1(Vtest____024root* vlSelf);
 
 VL_ATTR_COLD void Vtest____024root___eval_stl(Vtest____024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
@@ -285,6 +117,15 @@ VL_ATTR_COLD void Vtest____024root___eval_stl(Vtest____024root* vlSelf) {
     // Body
     if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
         Vtest____024root___stl_sequent__TOP__0(vlSelf);
+        vlSelf->__Vm_traceActivity[3U] = 1U;
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+        vlSelf->__Vm_traceActivity[1U] = 1U;
+        vlSelf->__Vm_traceActivity[0U] = 1U;
+    }
+    if ((3ULL & vlSelf->__VstlTriggered.word(0U))) {
+        Vtest____024root___act_sequent__TOP__1(vlSelf);
+        vlSelf->__Vm_traceActivity[3U] = 1U;
+        vlSelf->__Vm_traceActivity[2U] = 1U;
         vlSelf->__Vm_traceActivity[1U] = 1U;
         vlSelf->__Vm_traceActivity[0U] = 1U;
     }
@@ -317,10 +158,19 @@ VL_ATTR_COLD void Vtest____024root___dump_triggers__act(Vtest____024root* vlSelf
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge test_.clk)\n");
+        VL_DBG_MSGF("         'act' region trigger index 0 is active: @([hybrid] test_.wrapper.decoded_instr)\n");
     }
     if ((2ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 1 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'act' region trigger index 1 is active: @(posedge test_.__Vcellinp__wrapper____pinNumber1)\n");
+    }
+    if ((4ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 2 is active: @(posedge test_.clk)\n");
+    }
+    if ((8ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 3 is active: @(negedge test_.clk)\n");
+    }
+    if ((0x10ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 4 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -335,10 +185,19 @@ VL_ATTR_COLD void Vtest____024root___dump_triggers__nba(Vtest____024root* vlSelf
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge test_.clk)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @([hybrid] test_.wrapper.decoded_instr)\n");
     }
     if ((2ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(posedge test_.__Vcellinp__wrapper____pinNumber1)\n");
+    }
+    if ((4ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 2 is active: @(posedge test_.clk)\n");
+    }
+    if ((8ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 3 is active: @(negedge test_.clk)\n");
+    }
+    if ((0x10ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 4 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -349,30 +208,51 @@ VL_ATTR_COLD void Vtest____024root___ctor_var_reset(Vtest____024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtest____024root___ctor_var_reset\n"); );
     // Body
     vlSelf->test___DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->test___DOT____Vcellinp__wrapper____pinNumber1 = VL_RAND_RESET_I(2);
+    vlSelf->test___DOT__wrapper__DOT__global_counter = VL_RAND_RESET_I(32);
     vlSelf->test___DOT__wrapper__DOT__program_counter = VL_RAND_RESET_I(32);
     vlSelf->test___DOT__wrapper__DOT__instruction = VL_RAND_RESET_I(32);
-    VL_RAND_RESET_W(198, vlSelf->test___DOT__wrapper__DOT__decoded_instr);
+    VL_RAND_RESET_W(199, vlSelf->test___DOT__wrapper__DOT__decoded_instr);
     vlSelf->test___DOT__wrapper__DOT__ram_load_address = VL_RAND_RESET_I(32);
-    vlSelf->test___DOT__wrapper__DOT__ram_load_value = VL_RAND_RESET_I(32);
-    vlSelf->test___DOT__wrapper__DOT__ram_store_address = VL_RAND_RESET_I(32);
-    vlSelf->test___DOT__wrapper__DOT__ram_store_enabled = VL_RAND_RESET_I(1);
-    vlSelf->test___DOT__wrapper__DOT__ram_store_value = VL_RAND_RESET_I(32);
+    vlSelf->test___DOT__wrapper__DOT__rs1_data = VL_RAND_RESET_I(32);
+    vlSelf->test___DOT__wrapper__DOT__rs2_data = VL_RAND_RESET_I(32);
     vlSelf->test___DOT__wrapper__DOT__alu_output = VL_RAND_RESET_I(32);
     vlSelf->test___DOT__wrapper__DOT__stall = VL_RAND_RESET_I(1);
     vlSelf->test___DOT__wrapper__DOT__ram_trap = VL_RAND_RESET_I(1);
-    vlSelf->test___DOT__wrapper__DOT__reset = VL_RAND_RESET_I(1);
-    vlSelf->test___DOT__wrapper__DOT__reset_address = VL_RAND_RESET_I(32);
+    vlSelf->test___DOT__wrapper__DOT__instruction_trap = VL_RAND_RESET_I(1);
+    vlSelf->test___DOT__wrapper__DOT__pc_reset_branch = VL_RAND_RESET_I(1);
+    vlSelf->test___DOT__wrapper__DOT__reset_address_branch = VL_RAND_RESET_I(32);
+    vlSelf->test___DOT__wrapper__DOT__pc_reset_jump = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 1024; ++__Vi0) {
         vlSelf->test___DOT__wrapper__DOT__ram_controller__DOT__bram_block[__Vi0] = VL_RAND_RESET_I(32);
     }
-    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__trap_instr = VL_RAND_RESET_I(1);
+    vlSelf->test___DOT__wrapper__DOT__pc__DOT__current_counter = VL_RAND_RESET_I(32);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__opcode = VL_RAND_RESET_I(7);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__rd = VL_RAND_RESET_I(5);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__func3 = VL_RAND_RESET_I(3);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__rs1 = VL_RAND_RESET_I(5);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__rs2 = VL_RAND_RESET_I(5);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__func7 = VL_RAND_RESET_I(7);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__is_r = VL_RAND_RESET_I(1);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__is_i = VL_RAND_RESET_I(1);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__is_s = VL_RAND_RESET_I(1);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__is_b = VL_RAND_RESET_I(1);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__is_u = VL_RAND_RESET_I(1);
+    vlSelf->test___DOT__wrapper__DOT__instruction_decoder__DOT__unnamedblk1__DOT__is_j = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 32; ++__Vi0) {
         vlSelf->test___DOT__wrapper__DOT__reg_file__DOT__block[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs1_x = VL_RAND_RESET_I(32);
     vlSelf->test___DOT__wrapper__DOT__alu__DOT__unnamedblk1__DOT__rs2_x = VL_RAND_RESET_I(32);
+    vlSelf->test___DOT__wrapper__DOT__branch__DOT__unnamedblk1__DOT__rs1_data_unsigned = VL_RAND_RESET_I(32);
+    vlSelf->test___DOT__wrapper__DOT__branch__DOT__unnamedblk1__DOT__rs2_data_unsigned = VL_RAND_RESET_I(32);
+    VL_RAND_RESET_W(199, vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__0);
+    vlSelf->__VstlDidInit = 0;
+    VL_RAND_RESET_W(199, vlSelf->__Vtrigprevexpr___TOP__test___DOT__wrapper__DOT__decoded_instr__1);
+    vlSelf->__Vtrigprevexpr___TOP__test___DOT____Vcellinp__wrapper____pinNumber1__0 = VL_RAND_RESET_I(2);
     vlSelf->__Vtrigprevexpr___TOP__test___DOT__clk__0 = VL_RAND_RESET_I(1);
-    for (int __Vi0 = 0; __Vi0 < 2; ++__Vi0) {
+    vlSelf->__VactDidInit = 0;
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }
 }

@@ -6,12 +6,18 @@ module pc (
     output logic [31:0] program_counter
 );
 
-    always @(posedge clk ) begin
+    logic [31:0] current_counter; 
 
+    always @(negedge clk ) begin        
         if (reset)
-            program_counter <= reset_address;
+            current_counter <= reset_address;
         else if(!stall)
-            program_counter <= program_counter + 32'h4;
+            current_counter <= current_counter + 32'h4;
+    end
+
+    always @(posedge clk) begin
+
+        program_counter <= current_counter;
 
     end
 

@@ -23,6 +23,7 @@ typedef struct packed {
     logic [0:0] is_b;
     logic [0:0] is_u;
     logic [0:0] is_j;
+    logic [0:0] is_jalr;
 
 } decoded_instr_t;
 

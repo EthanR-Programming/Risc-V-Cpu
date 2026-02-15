@@ -12,8 +12,7 @@ module alu(
     always_comb begin
 
         logic [31:0] rs1_x = rs1;
-        logic [31:0] rs2_x = (instr.is_r) ? rs2 : instr.imm_i;
-
+        logic [31:0] rs2_x = (instr.is_r) ? rs2 : (instr.func3 == 3'b101 || instr.func3 == 3'b001 ? instr.imm_i & 5'b1111 : instr.imm_i);
 
         case (instr.func3)
 
